@@ -17,8 +17,8 @@ This is a collection of notes from the "Understanding APIs and RESTful APIs Cras
    - [POST Requests](#post-requests)
    - [DELETE Requests](#delete-requests)
    - [PUT/PATCH Requests](#putpatch-requests)
-   - Consuming APIs
-   - Common Satus Codes
+   - [Consuming APIs](#consuming-apis)
+   - [Common Satus Codes](#common-status-codes)
    - API Security
 3. Summary
    - Resouurces
@@ -180,4 +180,88 @@ How does a DELETE Request work?
 
 - In the restaurant analogy, using a _DELETE_ request is similar to looking at your bill, seeing you were charged twice for your pizza, and then telling the waiter "Hey, I got charged twice, delete this other charge". The waiter would then put a request in to remove the second pizza charge from the bill.
 
+[Back to Top](#table-of-contents)
+
 ### PUT/PATCH Requests
+
+How does a PUT and PATCH request work?
+
+**PATCH Requests**
+
+- Do not go through the standard URL, but use a URL as the endpoint
+- Ask another computer to _update a piece_ of a resource
+- Are not fully supported by all browsers or frameworks, so we typcially fall back to _PUT_ requests
+- Example: Updating a user's first name
+- In the restaurant example, you get your bill and see that you were overcharged for your pizza. Rather than asking for them to redo the whole bill, you just ask the waiter to update the bill with the correct price for your pizza.
+
+**PUT Requests**
+
+- Do not go through the standard URL, but use a URL as the endpoint
+- Ask another computer to _update an entire resource_
+- If the requested doesn't exist, the API might decide to _CREATE_ the resource instead.
+- In the restaurant example, this would be the equivalent of seeing your bill and you were charged for a steak and a salad that you did not order at all. You then tell the waiter to redo this whole bill because it is wrong.
+- A _PUT_ request will generally replace the ENTIRE item.
+
+| HTTP Method | CRUD Operation          | Example URL                                        |
+| ----------- | ----------------------- | -------------------------------------------------- |
+| GET         | Read                    | HTTP GET http://website.com/api/users/1/           |
+| POST        | Create                  | HTTP POST http://website.com/api/users/            |
+| DELETE      | Delete                  | HTTP DELETE http://website.com/api/users/1/        |
+| PUT         | Update/Replace          | HTTP PUT http://website.com/api/user/1/            |
+| PATCH       | _PARTIAL_ Update/Modify | HTTP PATCH http://website.com/api/user/1/firstname |
+
+[Back to Top](#table-of-contents)
+
+### Consuming APIs
+
+- APIs can be **written** in almost any server-side language.
+- APIs will generally return one of two types of data structures: _JSON_ or _XML_
+
+**Example of JSON**
+
+```json
+{
+  "key_val_example": "value",
+  "array_example": ["array item 1", "array item 2"],
+  "object_example": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+**Example of XML**
+
+```xml
+<example>
+   <field>
+   Value
+   </field>
+   <secondField>
+   Value
+   </secondField>
+   <nestedExample>
+      <nestedField>
+      Value
+      </nestedField>
+      <nestedSecondField>
+      Value
+      </nestedSecondField>
+   </nestedExample>
+</example>
+```
+
+- APIs can be _consumed_ in just about any language but generally:
+  - Browsers use JavaScript for their API requests
+  - Servers use any language that runs on that computer
+
+[Back to Top](#table-of-contents)
+
+### Common Status Codes
+
+The difference between _REQUESTS_ and _RESPONSES_
+
+- **Request** > When you request data from a server using GET, POST, PUT, PATCH, or DELETE... that is a REQUEST.
+- **Response** > When the server returns your data ... that is a RESPONSE.
+
+- **Responses will always come with an HTTP Status code**. These "status codes" tell you what's wrong (or right) without needing to give you text back to read.
