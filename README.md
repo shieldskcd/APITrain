@@ -13,7 +13,7 @@ This is a collection of notes from the "Understanding APIs and RESTful APIs Cras
    - [Introduction to JSON](#introduction-to-json)
    - [Using SWAPI Notes](#using-swapi-notes)
    - [Real JavaScript Example](#using-a-real-javascript-example)
-   - GET Requests
+   - [GET Requests](#get-requests)
    - POST Requests
    - DELETE Requests
    - PUT/PATCH Requests
@@ -86,4 +86,29 @@ Time to start learning about SWAPI - [The Star Wars API](https://swapi.co)!
 
 Unfortunately the original SWAPI website is no longer maintained but it looks like someone else has taken over the management of the site. It is now available at http://swapi.dev
 
-## Using a Real JavaScript Example
+### Using a Real JavaScript Example
+
+Of course, the best way to understand this technology is to use a real-world example.
+
+- Open the SWAPI URL (https://swapi.dev/) and open a console in Google Chrome.
+- In the console, you can type the following code:
+
+```javascript
+fetch("https://swapi.dev/api/people/")
+  .then((res) => res.json())
+  .then((response) => console.log(response));
+```
+
+- This will produce a JavaScript promise which then generates a list of data (in this case, 87 records).
+- Most langauges have a data strucuture that looks like a JavaScript Object
+- One day, someone decided that it should be a standard and JSON became a standard.
+
+### GET Requests
+
+There are mutliple _methods_ (ways) in which an API can be called in a web app. The list basically looks like this:
+
+- HTTP GET
+- HTTP POST
+- HTTP PUT
+- HTTP DELETE
+- HTTP PATCH
