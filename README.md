@@ -14,9 +14,9 @@ This is a collection of notes from the "Understanding APIs and RESTful APIs Cras
    - [Using SWAPI Notes](#using-swapi-notes)
    - [Real JavaScript Example](#using-a-real-javascript-example)
    - [GET Requests](#get-requests)
-   - POST Requests
-   - DELETE Requests
-   - PUT/PATCH Requests
+   - [POST Requests](#post-requests)
+   - [DELETE Requests](#delete-requests)
+   - [PUT/PATCH Requests](#putpatch-requests)
    - Consuming APIs
    - Common Satus Codes
    - API Security
@@ -47,6 +47,8 @@ In the simplest sense, an API serves much like a waiter.
 - Once the chef completes the order, the waiter will then bring you the order you requested
 - You, the consumer, can then eat the pizza in whatever way you so choose.
 
+[Back to Top](#table-of-contents)
+
 ### Real Life Use Case
 
 APIs are meant to be simple, especially RESTful APIs. Here is a real life example:
@@ -56,6 +58,8 @@ APIs are meant to be simple, especially RESTful APIs. Here is a real life exampl
 - It asks each website, via API, to present the prices for flights
 - The data is then bundled up and sent to you, the requestor. This is considered a 1-To-Many relationship but most APIs are 1-to-1.
 
+[Back to Top](#table-of-contents)
+
 ### Programming Languages
 
 So what programming languages can use APIs?
@@ -63,6 +67,8 @@ So what programming languages can use APIs?
 - Most modern web languages can use APIs. However, it's important to remember that HTML is NOT a programming language so it cannot use APIs.
 - Common languages include: Python, JavaScript, PHP, Java, C, and Ruby
 - Each of these languages can use APIs but the way that you tell the language to communicate varies from language to language. Essentially, there is no single "One for all languages" way to use APIs.
+
+[Back to Top](#table-of-contents)
 
 ### What are RESTful APIs
 
@@ -74,6 +80,8 @@ REST is a type of API and it stands for:
 - In simple terms, any client computer asks another computer for data or to take action.
 - In our restaurant example: the Chef is our server, you (the diner) are the client, and the waiter is the API.
 
+[Back to Top](#table-of-contents)
+
 ### Introduction to JSON
 
 Time to start learning about SWAPI - [The Star Wars API](https://swapi.co)!
@@ -82,9 +90,13 @@ Time to start learning about SWAPI - [The Star Wars API](https://swapi.co)!
 - If you place an API call to it such as `https://swapi.co/api/starships/9` the API will return a large list of data about the Death Star.
 - The data will be presented in a special list of organized data known as JSON or _JavaScript Object Notation_, it is essentially a list of key pairs that you can interact with in an application.
 
+[Back to Top](#table-of-contents)
+
 ### Using SWAPI Notes
 
 Unfortunately the original SWAPI website is no longer maintained but it looks like someone else has taken over the management of the site. It is now available at http://swapi.dev
+
+[Back to Top](#table-of-contents)
 
 ### Using a Real JavaScript Example
 
@@ -102,6 +114,8 @@ fetch("https://swapi.dev/api/people/")
 - This will produce a JavaScript promise which then generates a list of data (in this case, 87 records).
 - Most langauges have a data strucuture that looks like a JavaScript Object
 - One day, someone decided that it should be a standard and JSON became a standard.
+
+[Back to Top](#table-of-contents)
 
 ### GET Requests
 
@@ -124,4 +138,46 @@ How does a GET Request work?
 HTTPS Methods for RESTful Requests:
 | HTTP Method | CRUD Operation | Example URL(s)|
 | --- | --- | --- |
-|GET | Read | HTTP GET http://website.com/api/users |
+|GET | Read | HTTP GET http://website.com/api/users/1/|
+
+- In the restaurant analogy, using a _GET_ request is essentially like asking the waiter to give you a menu
+
+[Back to Top](#table-of-contents)
+
+### POST Requests
+
+How does a POST Request work?
+
+- Does not go through the standard URL, but use a URL as the endpoint
+- Ask another computer to create a new resource
+- Returns data about the newly created resource
+- A great example of one of these requests is if you are signing up for an account on some service. - You put in various information (name, email, phone, etc.)
+  - The data is collected and _posted_ as an item linked to your user name
+  - Now, when you need to use the object, you provide it your user name and the POST can provide you with that data (if you are the one authorized to have it)
+
+| HTTP Method | CRUD Operation | Example URL                              |
+| ----------- | -------------- | ---------------------------------------- |
+| GET         | Read           | HTTP GET http://website.com/api/users/1/ |
+| POST        | Create         | HTTP POST http://website.com/api/users/  |
+
+- In the restaurant analogy, using a _POST_ request is the equivalent to telling the waiter "I want this pizza" and then the chef saying "Okay, here is the pizza you requested"
+
+[Back to Top](#table-of-contents)
+
+### DELETE Requests
+
+How does a DELETE Request work?
+
+- Do not go through the standard URL, but use a URL as the endpoint
+- Ask another computer to delete a single resource or a list of resources
+- **Use with caution!**
+
+| HTTP Method | CRUD Operation | Example URL                                |
+| ----------- | -------------- | ------------------------------------------ |
+| GET         | Read           | HTTP GET http://website.com/api/users/1/   |
+| POST        | Create         | HTTP POST http://website.com/api/users/    |
+| DELETE      | Delete         | HTTP DELETE http://website.com/api/user/1/ |
+
+- In the restaurant analogy, using a _DELETE_ request is similar to looking at your bill, seeing you were charged twice for your pizza, and then telling the waiter "Hey, I got charged twice, delete this other charge". The waiter would then put a request in to remove the second pizza charge from the bill.
+
+### PUT/PATCH Requests
