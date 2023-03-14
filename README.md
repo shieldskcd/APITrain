@@ -112,3 +112,18 @@ There are mutliple _methods_ (ways) in which an API can be called in a web app. 
 - HTTP PUT
 - HTTP DELETE
 - HTTP PATCH
+
+How does a GET Request work?
+
+- When you load a website, that's a GET request
+- It's a request to get data from another computer
+- You're simply asking for data and you are ont asking to perform a task
+- You're not creating, updating, or deleting data
+- This is the most common request type.
+
+HTTPS Methods for RESTful Requests:
+| **HTTP Methods for RESTful Requests** |
+|-----------------|
+| HTTP Method | CRUD Operation | Example URL(s)|
+|-----------| -------------| ------------|
+|GET | Read | HTTP GET http://website.com/api/users
