@@ -122,7 +122,6 @@ How does a GET Request work?
 - This is the most common request type.
 
 HTTPS Methods for RESTful Requests:
-| **HTTP Methods for RESTful Requests** |
-| ---- |
 | HTTP Method | CRUD Operation | Example URL(s)|
+| --- | --- | --- |
 |GET | Read | HTTP GET http://website.com/api/users |
