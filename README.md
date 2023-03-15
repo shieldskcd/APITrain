@@ -22,7 +22,7 @@ This is a collection of notes from the "Understanding APIs and RESTful APIs Cras
    - [API Security](#api-security)
 3. [Summary](#summary)
    - [Resouurces](#resources)
-   - REST API Cheat Sheet
+   - [REST API Cheat Sheet](#rest-api-cheatsheet)
 
 ## Introduction
 
@@ -320,6 +320,8 @@ When dealing with the large amounts of data that can be accessed from an API, it
 
 - Most APIs are secured with API Keys
 
+[Back to Top](#table-of-contents)
+
 ### Resources
 
 - [https://resfulapi.net/http-methods]
@@ -329,3 +331,5 @@ When dealing with the large amounts of data that can be accessed from an API, it
 ### Rest API Cheatsheet
 
 ![API Cheatsheet Diagram](/src/RESTAPI_Cheats.png "REST API CheatSheet")
+
+[Back to Top](#table-of-contents)
