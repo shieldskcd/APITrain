@@ -265,3 +265,33 @@ The difference between _REQUESTS_ and _RESPONSES_
 - **Response** > When the server returns your data ... that is a RESPONSE.
 
 - **Responses will always come with an HTTP Status code**. These "status codes" tell you what's wrong (or right) without needing to give you text back to read.
+
+**Healthy Responses (2xx)**
+
+- 200 - Ok - request is accepted
+- 201 - Created - POST requets often return 201s when a resource is created
+- 202 - Accepted - When a request is accepted but its not done processing. Maybe the task goes into a queue.
+
+**Redirect Responses (3xx)**
+
+- 301 - Moved Permanently - When the endpoint has permanently changed. Update your endpoint
+- 302 - Found - The endpoint you're accessing is temporarily moved to somewhere else
+
+**Client Responses (4xx)**
+
+- 400 - Bad Request - Server cannot or will not process your request. Often this is due to malformed API keys or an invalid payload
+- 401 - Unauthorized - You're not allowed here. Usually this is because you are missing authentication credentials (API Key)
+- 403 - Forbidden - The server understands your request but won't execute it. Your API keys might not have the right permissions or you're trying to use an endpoint you don't have access to.
+- 404 - Not Found - There's nothing here. Move along, move along.
+- 405 - Method Not Allowed - You're using the wrong HTTP method. The endpoint might only accept GET requests and you might POSTing to it, for example.
+
+**Server Responses (5xx)**
+
+- 500 - Internal Server Error - The server had a problem and couldn't process the request. This is the _only time_ you are not in control.
+
+**Just for Fun**
+For fun, what kind of error is 418? The correct answer is here: [418 Error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418)
+
+[Back to Top](#table-of-contents)
+
+### API Security
