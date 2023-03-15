@@ -19,9 +19,9 @@ This is a collection of notes from the "Understanding APIs and RESTful APIs Cras
    - [PUT/PATCH Requests](#putpatch-requests)
    - [Consuming APIs](#consuming-apis)
    - [Common Satus Codes](#common-status-codes)
-   - API Security
-3. Summary
-   - Resouurces
+   - [API Security](#api-security)
+3. [Summary](#summary)
+   - [Resouurces](#resources)
    - REST API Cheat Sheet
 
 ## Introduction
@@ -295,3 +295,37 @@ For fun, what kind of error is 418? The correct answer is here: [418 Error](http
 [Back to Top](#table-of-contents)
 
 ### API Security
+
+When dealing with the large amounts of data that can be accessed from an API, it makes sense that security is important for APIs. Here are a few quick items:
+
+- API Keys
+  - API Keys are "passwords" to access an API. These are your authentication credentials
+  - Almost every website requires API keys to perform some action
+  - Facebook's Graph API is a good example: [Facebook Graph API](graph.facebook.com/codingforeverybody)
+
+[Back to Top](#table-of-contents)
+
+## Summary
+
+- Think of the API as a waiter in a restaurant
+- Remember the table from before:
+
+  | HTTP Method | CRUD Operation          | Example URL                                        |
+  | ----------- | ----------------------- | -------------------------------------------------- |
+  | GET         | Read                    | HTTP GET http://website.com/api/users/1/           |
+  | POST        | Create                  | HTTP POST http://website.com/api/users/            |
+  | DELETE      | Delete                  | HTTP DELETE http://website.com/api/users/1/        |
+  | PUT         | Update/Replace          | HTTP PUT http://website.com/api/user/1/            |
+  | PATCH       | _PARTIAL_ Update/Modify | HTTP PATCH http://website.com/api/user/1/firstname |
+
+- Most APIs are secured with API Keys
+
+### Resources
+
+- [https://resfulapi.net/http-methods]
+- [http://httpstatuses.com/]
+- [The Star Wars API](https://swapi.dev)
+
+### Rest API Cheatsheet
+
+![API Cheatsheet Diagram](/src/RESTAPI_Cheats.png "REST API CheatSheet")
